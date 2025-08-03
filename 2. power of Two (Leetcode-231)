@@ -1,0 +1,44 @@
+//2.Power of Two
+import java.util.Scanner;
+class Solution
+{
+    public boolean isPowerOfTwo(int num) 
+    {
+        if(num < 1) {
+            return false;
+        }else if(num == 1) 
+        {
+            return true;
+        }else{
+            while(num % 2 == 0) 
+            {
+                num = num / 2;
+            }
+            if(num == 1) 
+            {
+                return true;
+            }else{
+                return false;
+            }
+        }
+    }
+}
+public class Main 
+{
+    public static void main(String[] args) 
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int num = sc.nextInt();
+
+        Solution s = new Solution();
+        boolean d = s.isPowerOfTwo(num);
+
+        if(d) 
+        {
+            System.out.println(num + " is a power of 2.");
+        }else{
+            System.out.println(num + " is NOT a power of 2.");
+        }
+    }
+}
